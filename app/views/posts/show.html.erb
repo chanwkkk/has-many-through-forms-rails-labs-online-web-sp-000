@@ -29,7 +29,7 @@
 <%= f.hidden_field :post_id, :value => @post.id %>
 <%= f.label :username%>
 <%= f.collection_select :user_id, User.all, :id, :username %>
-<%= f.fields_for :user, @comment.build_user do |u|%>
+<%= f.fields_for :user, User.new do |u|%>
   <%= u.text_field :username%>
   <% end %>
 <%= f.label "Comment here:" %>
